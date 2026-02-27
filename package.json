@@ -1,0 +1,49 @@
+{
+  "name": "@octivas/mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Octivas web scraping, crawling, and search API",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "octivas-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "octivas",
+    "mcp",
+    "model-context-protocol",
+    "scraping",
+    "web-scraping",
+    "crawling",
+    "search",
+    "ai"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/octivas/octivas-mcp"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "@octivas/sdk": "file:../clients/javascript",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.7.0"
+  }
+}
