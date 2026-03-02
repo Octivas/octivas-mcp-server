@@ -21,7 +21,7 @@ const client = new Octivas({
 
 const server = new McpServer({
   name: "octivas",
-  version: "0.1.0",
+  version: "0.1.2",
 });
 
 registerScrape(server, client);
