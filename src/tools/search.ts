@@ -1,5 +1,6 @@
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import type { Octivas, SearchResponse, ContentFormat } from "@octivas/sdk";
+import { ForbiddenError, RateLimitError } from "@octivas/sdk";
 import { z } from "zod";
 
 const contentFormats = z.enum([
@@ -71,11 +72,17 @@ export function registerSearch(server: McpServer, client: Octivas) {
           ],
         };
       } catch (error) {
+        let message = `Failed to search "${params.query}": ${error instanceof Error ? error.message : String(error)}`;
+        if (error instanceof ForbiddenError) {
+          message = `Your subscription is inactive. Upgrade or renew your plan at ${error.upgradeUrl ?? "https://octivas.com/pricing"} to continue.`;
+        } else if (error instanceof RateLimitError && error.creditsLimit != null) {
+          message = `Credit limit reached (${error.creditsUsed}/${error.creditsLimit} credits used). Upgrade your plan at ${error.upgradeUrl ?? "https://octivas.com/pricing"} for more credits.`;
+        }
         return {
           content: [
             {
               type: "text" as const,
-              text: `Failed to search "${params.query}": ${error instanceof Error ? error.message : String(error)}`,
+              text: message,
             },
           ],
           isError: true,
