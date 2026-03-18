@@ -40,7 +40,7 @@ Add to your `claude_desktop_config.json`:
 }
 ```
 
-Get your API key at [octivas.com/app/settings](https://octivas.com/app/settings).
+Get your API key at [octivas.com/app/api-keys](https://octivas.com/app/api-keys).
 
 ## Tools
 
