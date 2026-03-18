@@ -1,6 +1,6 @@
 {
   "name": "@octivas/mcp",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "MCP server for Octivas web scraping, crawling, and search API",
   "type": "module",
   "main": "dist/index.js",
@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.27.1",
-    "@octivas/sdk": "^0.1.0",
+    "@octivas/sdk": "^0.1.1",
     "zod": "^3.25.76"
   },
   "devDependencies": {
