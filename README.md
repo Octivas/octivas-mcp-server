@@ -1,6 +1,6 @@
 # @octivas/mcp
 
-MCP (Model Context Protocol) server for web scraping, search, and crawling powered by the [Octivas](https://octivas.com).
+MCP (Model Context Protocol) server for web scraping, search, and crawling powered by [Octivas](https://octivas.com).
 
 ## Quick Start
 
